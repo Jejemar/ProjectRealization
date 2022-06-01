@@ -90,6 +90,8 @@ h4 {
   margin-top: 250px;
   opacity:0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display:flex;
+  align-items: center;
 }
 
 p {
@@ -104,11 +106,9 @@ p {
     <div class="container">        
         <div class="block" id="block">
             <div class="behind" id="behind1"></div>
-            <p id="text">Scaling/zooming animations are problematic for accessibility,<br> as they are a common trigger for certain types of migraine. If you <br> need to include such animations on your website, you should provide a control to allow users to turn off animations, preferably site-wide.
-                Also, consider making use of  
-                </p>
+            <p id="text"></p>
             <div class="bottom">
-                <h4 id="label">Consultation and requirements analysis</h4>
+                <h4 id="label"></h4>
                 <button class="button" id="button1">></button>
                 <button class="button-hidden" id="button2"><</button>                
             </div>
@@ -116,7 +116,7 @@ p {
     </div>
 `;
 
-class Button extends HTMLElement {
+window.customElements.define('slide-right', class extends HTMLElement {
   constructor() {
     super();
 
@@ -202,6 +202,6 @@ class Button extends HTMLElement {
     this.$block.style.backgroundImage = this.url;
   }
 
-}
+})
 
-window.customElements.define('my-button', Button);
+// window.customElements.define('slide', Button);
